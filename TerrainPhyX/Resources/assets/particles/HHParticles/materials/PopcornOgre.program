@@ -1,0 +1,339 @@
+// ===============================================================
+// post effect BlackAndWhite
+
+vertex_program PopcornOgre/Program/HLSLBlackAndWhiteVS hlsl
+{
+	source PopcornOgrePostEffect.hlsl
+	entry_point mainBlackAndWhiteVS
+	target vs_2_0
+
+	default_params
+	{
+		param_named_auto	uWorldViewProj		worldviewproj_matrix
+	}
+}
+
+vertex_program PopcornOgre/Program/GLSLBlackAndWhiteVS glsl
+{
+	source PopcornOgrePostEffect.glsl
+	entry_point mainBlackAndWhiteVS
+	target vs_2_0
+
+	default_params
+	{
+		param_named_auto	uWorldViewProj		worldviewproj_matrix
+	}
+}
+
+vertex_program PopcornOgre/Program/BlackAndWhiteVS unified
+{
+	delegate PopcornOgre/Program/HLSLBlackAndWhiteVS
+	delegate PopcornOgre/Program/GLSLBlackAndWhiteVS
+}
+
+// ===============================================================
+
+fragment_program PopcornOgre/Program/HLSLBlackAndWhitePS hlsl
+{
+	source PopcornOgrePostEffect.hlsl
+	entry_point mainBlackAndWhitePS
+	target ps_2_0
+}
+
+fragment_program PopcornOgre/Program/GLSLBlackAndWhitePS glsl
+{
+	source PopcornOgrePostEffect.glsl
+	entry_point mainBlackAndWhitePS
+	target ps_2_0
+}
+
+fragment_program PopcornOgre/Program/BlackAndWhitePS unified
+{
+	delegate PopcornOgre/Program/HLSLBlackAndWhitePS
+	delegate PopcornOgre/Program/GLSLBlackAndWhitePS
+}
+
+// ===============================================================
+// post effect Distortion
+
+vertex_program PopcornOgre/Program/HLSLDistortionVS hlsl
+{
+	source PopcornOgrePostEffect.hlsl
+	entry_point mainDistortionVS
+	target vs_2_0
+
+	default_params
+	{
+		param_named_auto	uWorldViewProj		worldviewproj_matrix
+	}
+}
+
+vertex_program PopcornOgre/Program/GLSLDistortionVS glsl
+{
+	source PopcornOgrePostEffect.glsl
+	entry_point mainDistortionVS
+	target vs_2_0
+
+	default_params
+	{
+		param_named_auto	uWorldViewProj		worldviewproj_matrix
+	}
+}
+
+vertex_program PopcornOgre/Program/DistortionVS unified
+{
+	delegate PopcornOgre/Program/HLSLDistortionVS
+	delegate PopcornOgre/Program/GLSLDistortionVS
+}
+
+// ===============================================================
+
+fragment_program PopcornOgre/Program/HLSLDistortionPS hlsl
+{
+	source PopcornOgrePostEffect.hlsl
+	entry_point mainDistortionPS
+	target ps_2_0
+}
+
+fragment_program PopcornOgre/Program/GLSLDistortionPS glsl
+{
+	source PopcornOgrePostEffect.glsl
+	entry_point mainDistortionPS
+	target ps_2_0
+}
+
+fragment_program PopcornOgre/Program/DistortionPS unified
+{
+	delegate PopcornOgre/Program/HLSLDistortionPS
+	delegate PopcornOgre/Program/GLSLDistortionPS
+}
+
+// ===============================================================
+
+vertex_program PopcornOgre/HLSLPointVS hlsl
+{
+	source PopcornOgre.hlsl
+	entry_point mainPointVS
+	target vs_2_0
+
+	default_params
+	{
+		param_named_auto	g_WorldViewProj		worldviewproj_matrix
+	}
+}
+
+vertex_program PopcornOgre/GLSLPointVS glsl
+{
+	source PopcornOgre.glsl
+	entry_point mainPointVS
+	target vs_2_0
+}
+
+vertex_program PopcornOgre/PointVS unified
+{
+	delegate PopcornOgre/HLSLPointVS
+	delegate PopcornOgre/GLSLPointVS
+}
+
+// ===============================================================
+
+fragment_program PopcornOgre/HLSLPointPS hlsl
+{
+	source PopcornOgre.hlsl
+	entry_point mainPointPS
+	target ps_2_0
+}
+
+fragment_program PopcornOgre/GLSLPointPS glsl
+{
+	source PopcornOgre.glsl
+	entry_point mainPointPS
+	target ps_2_0
+}
+
+fragment_program PopcornOgre/PointPS unified
+{
+	delegate PopcornOgre/HLSLPointPS
+	delegate PopcornOgre/GLSLPointPS
+}
+
+// ===============================================================
+
+vertex_program PopcornOgre/HLSLSolidVS hlsl
+{
+	source PopcornOgre.hlsl
+	entry_point mainSolidVS
+	target vs_2_0
+
+	default_params
+	{
+		param_named_auto	g_WorldViewProj		worldviewproj_matrix
+	}
+}
+
+vertex_program PopcornOgre/GLSLSolidVS glsl
+{
+	source PopcornOgre.glsl
+	entry_point mainSolidVS
+	target vs_2_0
+}
+
+vertex_program PopcornOgre/SolidVS unified
+{
+	delegate PopcornOgre/HLSLSolidVS
+	delegate PopcornOgre/GLSLSolidVS
+}
+
+// ===============================================================
+
+fragment_program PopcornOgre/HLSLSolidPS hlsl
+{
+	source PopcornOgre.hlsl
+	entry_point mainSolidPS
+	target ps_2_0
+}
+
+fragment_program PopcornOgre/GLSLSolidPS glsl
+{
+	source PopcornOgre.glsl
+	entry_point mainSolidPS
+	target ps_2_0
+}
+
+fragment_program PopcornOgre/SolidPS unified
+{
+	delegate PopcornOgre/HLSLSolidPS
+	delegate PopcornOgre/GLSLSolidPS
+}
+
+// ===============================================================
+
+vertex_program PopcornOgre/HLSLTexturedVS hlsl
+{
+	source PopcornOgre.hlsl
+	entry_point mainTexturedVS
+	target vs_2_0
+
+	default_params
+	{
+		param_named_auto	g_WorldViewProj		worldviewproj_matrix
+	}
+}
+
+vertex_program PopcornOgre/GLSLTexturedVS glsl
+{
+	source PopcornOgre.glsl
+	entry_point mainTexturedVS
+	target vs_2_0
+
+	default_params
+	{
+		param_named_auto	g_WorldViewProj		worldviewproj_matrix
+	}
+}
+
+vertex_program PopcornOgre/TexturedVS unified
+{
+	delegate PopcornOgre/HLSLTexturedVS
+	delegate PopcornOgre/GLSLTexturedVS
+}
+
+// ===============================================================
+
+fragment_program PopcornOgre/HLSLTexturedPS hlsl
+{
+	source PopcornOgre.hlsl
+	entry_point mainTexturedPS
+	target ps_2_0
+}
+
+fragment_program PopcornOgre/GLSLTexturedPS glsl
+{
+	source PopcornOgre.glsl
+	entry_point mainTexturedPS
+//	target ps_2_0
+}
+
+fragment_program PopcornOgre/TexturedPS unified
+{
+	delegate PopcornOgre/HLSLTexturedPS
+	delegate PopcornOgre/GLSLTexturedPS
+}
+
+// ===============================================================
+
+fragment_program PopcornOgre/HLSLTexturedPSAlphaWeight hlsl
+{
+	source PopcornOgre.hlsl
+	entry_point mainTexturedPSAlphaWeight
+	target ps_2_0
+}
+
+fragment_program PopcornOgre/GLSLTexturedPSAlphaWeight glsl
+{
+	source PopcornOgre.glsl
+	entry_point mainTexturedPSAlphaWeight
+	target ps_2_0
+}
+
+fragment_program PopcornOgre/TexturedPSAlphaWeight unified
+{
+	delegate PopcornOgre/HLSLTexturedPSAlphaWeight
+	delegate PopcornOgre/GLSLTexturedPSAlphaWeight
+}
+
+// ===============================================================
+
+fragment_program PopcornOgre/HLSLTexturedDistordPS hlsl
+{
+	source PopcornOgre.hlsl
+	entry_point mainTexturedDistordPS
+	target ps_2_0
+}
+
+fragment_program PopcornOgre/GLSLTexturedDistordPS glsl
+{
+	source PopcornOgre.glsl
+	entry_point mainTexturedDistordPS
+	target ps_2_0
+}
+
+fragment_program PopcornOgre/TexturedDistordPS unified
+{
+	delegate PopcornOgre/HLSLTexturedDistordPS
+	delegate PopcornOgre/GLSLTexturedDistordPS
+}
+
+// ===============================================================
+
+vertex_program PopcornOgre/LightingTexturedVS hlsl
+{
+	source PopcornOgre.hlsl
+	entry_point mainLightingTexturedVS
+	target vs_3_0
+	preprocessor_defines LIGHT_NUMBER=1
+
+	default_params
+	{
+		param_named_auto 	g_WorldViewProj		worldviewproj_matrix
+		param_named_auto 	g_World				world_matrix
+		param_named_auto 	g_CameraPos			camera_position
+		param_named_auto 	g_LightPos			light_position_array		1
+	}
+}
+
+fragment_program PopcornOgre/LightingTexturedPS hlsl
+{
+	source PopcornOgre.hlsl
+	entry_point mainLightingTexturedPS
+	target ps_3_0
+	preprocessor_defines LIGHT_NUMBER=1
+
+	default_params
+	{
+		// 0 is the nearest light
+		param_named_auto 	g_AmbiantColor		ambient_light_colour		0
+		param_named_auto 	g_DiffuseColor		light_diffuse_colour_array	1
+		param_named_auto 	g_SpecularColor 	light_specular_colour_array	1
+	}
+}

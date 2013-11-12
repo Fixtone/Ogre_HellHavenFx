@@ -1,0 +1,706 @@
+// used by the compositor script PopcornOgre/Compositor/BlackAndWhite
+material PopcornOgre/Material/BlackAndWhite
+{
+	technique
+	{
+		pass
+		{
+			depth_check off
+
+			vertex_program_ref PopcornOgre/Program/BlackAndWhiteVS { }
+			fragment_program_ref PopcornOgre/Program/BlackAndWhitePS { }
+
+			texture_unit
+			{
+				tex_coord_set 0
+				tex_address_mode clamp
+				filtering linear linear linear
+			}
+		}
+	}
+}
+
+// used by the compositor script PopcornOgre/Compositor/Distortion
+material PopcornOgre/Material/Distortion
+{
+	technique
+	{
+		pass
+		{
+			depth_check off
+
+			vertex_program_ref PopcornOgre/Program/DistortionVS { }
+			fragment_program_ref PopcornOgre/Program/DistortionPS { }
+
+			// our rt scene texture
+			texture_unit
+			{
+				tex_coord_set 0
+				tex_address_mode clamp
+				filtering linear linear linear
+			}
+
+			// out rt distortion texture
+			texture_unit
+			{
+				tex_coord_set 1
+				tex_address_mode clamp
+				filtering linear linear linear
+			}
+		}
+	}
+}
+
+// =========================================================================
+// Default // used by default when the batched object is created
+// =========================================================================
+
+material PopcornOgre/Default
+{
+	technique
+	{
+		pass
+		{
+			vertex_program_ref PopcornOgre/PointVS {}
+			fragment_program_ref PopcornOgre/PointPS {}
+		}
+	}
+}
+
+// =========================================================================
+// Custom
+// =========================================================================
+
+material PopcornOgre/Custom/point
+{
+	technique
+	{
+		pass
+		{
+			vertex_program_ref PopcornOgre/PointVS {}
+			fragment_program_ref PopcornOgre/PointPS {}
+		}
+	}
+}
+
+// =========================================================================
+
+material PopcornOgre/Custom/solid
+{
+	technique
+	{
+		pass
+		{
+			//scene_blend add
+			//depth_write off
+			//cull_hardware none
+
+			vertex_program_ref PopcornOgre/SolidVS {}
+			fragment_program_ref PopcornOgre/SolidPS {}
+		}
+	}
+}
+
+// =========================================================================
+
+material PopcornOgre/Custom/textured
+{
+	technique
+	{
+		pass
+		{
+			scene_blend add
+			depth_write off
+
+			cull_hardware none
+
+			vertex_program_ref PopcornOgre/TexturedVS {}
+			fragment_program_ref PopcornOgre/TexturedPS {}
+
+			// default texture if  none is provided
+			texture_unit
+			{
+				texture falloff.dds
+				filtering linear linear linear
+			}
+		}
+	}
+}
+
+// =========================================================================
+// Additive
+// =========================================================================
+
+material PopcornOgre/Additive/point
+{
+	technique
+	{
+		pass
+		{
+			vertex_program_ref PopcornOgre/PointVS {}
+			fragment_program_ref PopcornOgre/PointPS {}
+		}
+	}
+}
+
+// =========================================================================
+
+material PopcornOgre/Additive/solid
+{
+	technique
+	{
+		pass
+		{
+			cull_hardware none
+
+			vertex_program_ref PopcornOgre/SolidVS {}
+			fragment_program_ref PopcornOgre/SolidPS {}
+		}
+	}
+}
+
+// =========================================================================
+
+material PopcornOgre/Additive/textured
+{
+	technique
+	{
+		pass
+		{
+			cull_hardware none
+
+			scene_blend add
+			depth_write off
+
+			vertex_program_ref PopcornOgre/TexturedVS {}
+			fragment_program_ref PopcornOgre/TexturedPSAlphaWeight {}
+
+			// default texture if  none is provided
+			texture_unit
+			{
+				texture big_glow2.dds
+				filtering linear linear linear
+			}
+		}
+	}
+}
+
+// =========================================================================
+// Additive_NoAlpha
+// =========================================================================
+
+material PopcornOgre/Additive_NoAlpha/point
+{
+	technique
+	{
+		pass
+		{
+			vertex_program_ref PopcornOgre/PointVS {}
+			fragment_program_ref PopcornOgre/PointPS {}
+		}
+	}
+}
+
+// =========================================================================
+
+material PopcornOgre/Additive_NoAlpha/solid
+{
+	technique
+	{
+		pass
+		{
+			cull_hardware none
+
+			vertex_program_ref PopcornOgre/SolidVS {}
+			fragment_program_ref PopcornOgre/SolidPS {}
+		}
+	}
+}
+
+// =========================================================================
+
+material PopcornOgre/Additive_NoAlpha/textured
+{
+	technique
+	{
+		pass
+		{
+			cull_hardware none
+
+			scene_blend add
+			depth_write off
+
+			vertex_program_ref PopcornOgre/TexturedVS {}
+			fragment_program_ref PopcornOgre/TexturedPS {}
+
+			// default texture if  none is provided
+			texture_unit
+			{
+				texture big_glow2.dds
+				filtering linear linear linear
+			}
+		}
+	}
+}
+
+// =========================================================================
+// Additive_Soft
+// =========================================================================
+
+material PopcornOgre/Additive_Soft/point
+{
+	technique
+	{
+		pass
+		{
+			vertex_program_ref PopcornOgre/PointVS {}
+			fragment_program_ref PopcornOgre/PointPS {}
+		}
+	}
+}
+
+// =========================================================================
+
+material PopcornOgre/Additive_Soft/solid
+{
+	technique
+	{
+		pass
+		{
+			cull_hardware none
+
+			vertex_program_ref PopcornOgre/SolidVS {}
+			fragment_program_ref PopcornOgre/SolidPS {}
+		}
+	}
+}
+
+// =========================================================================
+
+material PopcornOgre/Additive_Soft/textured
+{
+	technique
+	{
+		pass
+		{
+			cull_hardware none
+
+			scene_blend add
+			depth_write off
+
+			vertex_program_ref PopcornOgre/TexturedVS {}
+			fragment_program_ref PopcornOgre/TexturedPSAlphaWeight {}
+
+			// default texture if  none is provided
+			texture_unit
+			{
+				texture big_glow2.dds
+				filtering linear linear linear
+			}
+		}
+	}
+}
+
+// =========================================================================
+// AlphaBlend
+// =========================================================================
+
+material PopcornOgre/AlphaBlend/point
+{
+	technique
+	{
+		pass
+		{
+			vertex_program_ref PopcornOgre/PointVS {}
+			fragment_program_ref PopcornOgre/PointPS {}
+		}
+	}
+}
+
+// =========================================================================
+
+material PopcornOgre/AlphaBlend/solid
+{
+	technique
+	{
+		pass
+		{
+			cull_hardware none
+
+			vertex_program_ref PopcornOgre/SolidVS {}
+			fragment_program_ref PopcornOgre/SolidPS {}
+		}
+	}
+}
+
+// =========================================================================
+
+material PopcornOgre/AlphaBlend/textured
+{
+	technique
+	{
+		pass
+		{
+			cull_hardware none
+			depth_write off
+
+			scene_blend src_alpha one_minus_src_alpha
+			// AlphaTestMode = GreaterOrEqual
+
+			vertex_program_ref PopcornOgre/TexturedVS {}
+			fragment_program_ref PopcornOgre/TexturedPS {}
+
+			// default texture if  none is provided
+			texture_unit
+			{
+				texture falloff.dds
+				filtering linear linear linear
+			}
+		}
+	}
+}
+
+// =========================================================================
+// AlphaBlend_Soft
+// =========================================================================
+
+material PopcornOgre/AlphaBlend_Soft/point
+{
+	technique
+	{
+		pass
+		{
+			vertex_program_ref PopcornOgre/PointVS {}
+			fragment_program_ref PopcornOgre/PointPS {}
+		}
+	}
+}
+
+// =========================================================================
+
+material PopcornOgre/AlphaBlend_Soft/solid
+{
+	technique
+	{
+		pass
+		{
+			cull_hardware none
+
+			vertex_program_ref PopcornOgre/SolidVS {}
+			fragment_program_ref PopcornOgre/SolidPS {}
+		}
+	}
+}
+
+// =========================================================================
+
+material PopcornOgre/AlphaBlend_Soft/textured
+{
+	technique
+	{
+		pass
+		{
+			cull_hardware none
+			depth_write off
+
+			scene_blend src_alpha one_minus_src_alpha
+
+			vertex_program_ref PopcornOgre/TexturedVS {}
+			fragment_program_ref PopcornOgre/TexturedPS {}
+
+			// default texture if  none is provided
+			texture_unit
+			{
+				texture falloff.dds
+				filtering linear linear linear
+			}
+		}
+	}
+}
+
+// =========================================================================
+// AlphaBlend_SoftLighting
+// =========================================================================
+
+material PopcornOgre/AlphaBlend_SoftLighting/point
+{
+	technique
+	{
+		pass
+		{
+			vertex_program_ref PopcornOgre/PointVS {}
+			fragment_program_ref PopcornOgre/PointPS {}
+		}
+	}
+}
+
+// =========================================================================
+
+material PopcornOgre/AlphaBlend_SoftLighting/solid
+{
+	technique
+	{
+		pass
+		{
+			cull_hardware none
+
+			vertex_program_ref PopcornOgre/SolidVS {}
+			fragment_program_ref PopcornOgre/SolidPS {}
+		}
+	}
+}
+
+// =========================================================================
+
+material PopcornOgre/AlphaBlend_SoftLighting/textured
+{
+	technique
+	{
+		pass
+		{
+			cull_hardware none
+			depth_write off
+
+			scene_blend src_alpha one_minus_src_alpha
+
+			vertex_program_ref PopcornOgre/TexturedVS {}
+			fragment_program_ref PopcornOgre/TexturedPS {}
+
+			// default texture if  none is provided
+			texture_unit
+			{
+				texture falloff.dds
+				filtering linear linear linear
+			}
+		}
+	}
+}
+
+// =========================================================================
+// AlphaBlend_Lighting
+// =========================================================================
+
+material PopcornOgre/AlphaBlend_Lighting/point
+{
+	technique
+	{
+		pass
+		{
+			vertex_program_ref PopcornOgre/PointVS {}
+			fragment_program_ref PopcornOgre/PointPS {}
+		}
+	}
+}
+
+// =========================================================================
+
+material PopcornOgre/AlphaBlend_Lighting/solid
+{
+	technique
+	{
+		pass
+		{
+			cull_hardware none
+
+			vertex_program_ref PopcornOgre/SolidVS {}
+			fragment_program_ref PopcornOgre/SolidPS {}
+		}
+	}
+}
+
+// =========================================================================
+
+material PopcornOgre/AlphaBlend_Lighting/textured
+{
+	technique
+	{
+		pass
+		{
+			cull_hardware none
+			depth_write off
+
+			scene_blend src_alpha one_minus_src_alpha
+
+			vertex_program_ref PopcornOgre/TexturedVS {}
+			fragment_program_ref PopcornOgre/TexturedPS {}
+
+			texture_unit
+			{
+				// default texture if  none is provided
+				texture falloff.dds
+				filtering linear linear linear
+			}
+		}
+	}
+}
+
+// =========================================================================
+// AlphaBlend_Distortion
+// =========================================================================
+
+material PopcornOgre/AlphaBlend_Distortion/point
+{
+	technique
+	{
+		pass
+		{
+			vertex_program_ref PopcornOgre/PointVS {}
+			fragment_program_ref PopcornOgre/PointPS {}
+		}
+	}
+}
+
+// =========================================================================
+
+material PopcornOgre/AlphaBlend_Distortion/solid
+{
+	technique
+	{
+		pass
+		{
+			vertex_program_ref PopcornOgre/SolidVS {}
+			fragment_program_ref PopcornOgre/SolidPS {}
+		}
+	}
+}
+
+// =========================================================================
+
+material PopcornOgre/AlphaBlend_Distortion/textured
+{
+	technique
+	{
+		pass
+		{
+			scene_blend add
+			depth_write off
+
+			vertex_program_ref PopcornOgre/TexturedVS {}
+			fragment_program_ref PopcornOgre/TexturedDistordPS {}
+
+			// default texture if  none is provided
+			texture_unit
+			{
+				texture falloff.dds
+				filtering linear linear linear
+			}
+		}
+	}
+}
+
+// =========================================================================
+// AlphaBlend_AdditiveSoft // used by Flocking sample, blast
+// =========================================================================
+
+material PopcornOgre/AlphaBlend_AdditiveSoft/point
+{
+	technique
+	{
+		pass
+		{
+			vertex_program_ref PopcornOgre/PointVS {}
+			fragment_program_ref PopcornOgre/PointPS {}
+		}
+	}
+}
+
+// =========================================================================
+
+material PopcornOgre/AlphaBlend_AdditiveSoft/solid
+{
+	technique
+	{
+		pass
+		{
+			cull_hardware none
+
+			vertex_program_ref PopcornOgre/SolidVS {}
+			fragment_program_ref PopcornOgre/SolidPS {}
+		}
+	}
+}
+
+// =========================================================================
+
+material PopcornOgre/AlphaBlend_AdditiveSoft/textured
+{
+	technique 
+	{
+		pass
+		{
+			cull_hardware none
+
+			scene_blend one one_minus_src_alpha
+			//depth_check on
+			depth_write off
+
+			vertex_program_ref PopcornOgre/TexturedVS {}
+			fragment_program_ref PopcornOgre/TexturedPS {}
+
+			// default texture if  none is provided
+			texture_unit
+			{
+				texture falloff.dds
+				filtering linear linear linear
+			}
+		}
+	}
+}
+
+// =========================================================================
+// AlphaBlend_AdditiveSoftLighting
+// =========================================================================
+
+material PopcornOgre/AlphaBlend_AdditiveSoftLighting/point
+{
+	technique
+	{
+		pass
+		{
+			vertex_program_ref PopcornOgre/PointVS {}
+			fragment_program_ref PopcornOgre/PointPS {}
+		}
+	}
+}
+
+// =========================================================================
+
+material PopcornOgre/AlphaBlend_AdditiveSoftLighting/solid
+{
+	technique
+	{
+		pass
+		{
+			cull_hardware none
+
+			vertex_program_ref PopcornOgre/SolidVS {}
+			fragment_program_ref PopcornOgre/SolidPS {}
+		}
+	}
+}
+
+// =========================================================================
+
+material PopcornOgre/AlphaBlend_AdditiveSoftLighting/textured
+{
+	technique
+	{
+		pass
+		{
+			cull_hardware none
+
+			scene_blend  one one_minus_src_alpha
+			depth_write off
+
+			vertex_program_ref PopcornOgre/TexturedVS {}
+			fragment_program_ref PopcornOgre/TexturedPS {}
+
+			// default texture if  none is provided
+			texture_unit
+			{
+				texture falloff.dds
+				filtering linear linear linear
+			}
+		}
+	}
+}
